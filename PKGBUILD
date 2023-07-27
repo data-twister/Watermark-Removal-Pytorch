@@ -6,7 +6,7 @@
 
 pkgname=watermark-remover-git
 _pkgname=${pkgname%-git}
-pkgver=r69.3b7fdd1
+pkgver=r70.64aa881
 pkgrel=1
 pkgdesc="Remove Watermark from an Image"
 arch=('any')
