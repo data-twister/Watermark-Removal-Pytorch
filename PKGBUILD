@@ -1,12 +1,10 @@
 # -*- mode: pkgbuild -*-
-# Maintainer  : Jason Clark <mithereal@gmail.com>
+# Maintainer  : Data Twister <maintainer@data-twister.com>
 #
-
-
 
 pkgname=watermark-remover-git
 _pkgname=${pkgname%-git}
-pkgver=r70.64aa881
+pkgver=r71.dd52700
 pkgrel=1
 pkgdesc="Remove Watermark from an Image"
 arch=('any')
@@ -18,7 +16,6 @@ provides=(watermark-remover-git)
 conflicts=(watermark-remover)
 source=("git+https://github.com/data-twister/Watermark-Removal-Pytorch")
 md5sums=('SKIP')
-
 
 pkgver() {
   cd "${srcdir}"
@@ -37,5 +34,4 @@ package() {
     mkdir -p $pkgdir/usr/lib/$pkgname
 
     rsync -av  --no-o --no-g ${srcdir}/Watermark-Removal-Pytorch/library/ $pkgdir/usr/lib/$pkgname
-
 }
