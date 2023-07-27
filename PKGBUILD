@@ -6,7 +6,7 @@
 
 pkgname=watermark-remover-git
 _pkgname=${pkgname%-git}
-pkgver=r58.a101a0a
+pkgver=r59.e74aec6
 pkgrel=1
 pkgdesc="Remove Watermark from an Image"
 arch=('any')
@@ -32,7 +32,8 @@ package() {
 
     install -D -m644 "LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 
-    sudo rsync -av --no-o --no-g ${srcdir}/Watermark-Removal-Pytorch/library/ /usr/lib/remove-watermark
+    install -D -m755 "remove-watermark" "$pkgdir/usr/bin/remove-watermark"
 
-     install -D -m755 "remove-watermark" "$pkgdir/usr/bin/remove-watermark"
+    sudo rsync -av --no-o --no-g ${srcdir}/Watermark-Removal-Pytorch/library/ $pkgdir/usr/lib/remove-watermark
+
 }
