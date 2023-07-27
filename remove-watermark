@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python /usr/bin/watermark-remover/inference.py $1
